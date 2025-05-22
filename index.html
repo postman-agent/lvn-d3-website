@@ -79,7 +79,7 @@
       text-shadow: 0 0 20px #00ffe1;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 3px solid #00ffe1;
+      
       padding-right: 5px;
       margin-bottom: 1rem;
       min-height: 3.5rem; /* Höhe festlegen, damit es nicht springt */
@@ -92,7 +92,7 @@
     }
 
     .typing-container {
-      animation: blink 0.7s infinite;
+      
     }
 
     .social-links {
@@ -180,9 +180,9 @@
 
   <script>
     const words = ["LVN_D3", "Upcoming Rapper", "Producer"];
-    const typingSpeed = 120;   // ms pro Buchstabe tippen
-    const deletingSpeed = 70;  // ms pro Buchstabe löschen
-    const pauseTime = 1200;    // ms Pause nach Wort voll getippt
+    const typingSpeed = 120;   
+    const deletingSpeed = 70;  
+    const pauseTime = 1200;    
 
     let wordIndex = 0;
     let charIndex = 0;
@@ -193,24 +193,24 @@
       const currentWord = words[wordIndex];
       
       if (!isDeleting) {
-        // Tippen
+        
         typingElement.textContent = currentWord.substring(0, charIndex + 1);
         charIndex++;
 
         if (charIndex === currentWord.length) {
-          // Wort fertig getippt, kurze Pause und dann löschen starten
+          
           isDeleting = true;
           setTimeout(type, pauseTime);
         } else {
           setTimeout(type, typingSpeed);
         }
       } else {
-        // Löschen
+        
         typingElement.textContent = currentWord.substring(0, charIndex - 1);
         charIndex--;
 
         if (charIndex === 0) {
-          // Wort komplett gelöscht, nächstes Wort
+          
           isDeleting = false;
           wordIndex = (wordIndex + 1) % words.length;
           setTimeout(type, typingSpeed);
@@ -220,7 +220,7 @@
       }
     }
 
-    // Start Typing Effect
+    
     type();
   </script>
 
