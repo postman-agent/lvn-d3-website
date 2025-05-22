@@ -57,6 +57,15 @@
       box-shadow: 0 0 12px #00ffe1;
     }
 
+    /* Aktiver Link */
+    .navbar a.active {
+      background-color: #00ffe1;
+      color: #000;
+      box-shadow: 0 0 15px #00ffe1;
+      pointer-events: none;
+      cursor: default;
+    }
+
     /* Haupt-Content */
     main {
       max-width: 500px;
@@ -140,8 +149,9 @@
 <body>
 
   <nav class="navbar">
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="releases.html">Singles / Releases</a>
+    <a href="aboutme.html">About Me</a>
   </nav>
 
   <main>
@@ -152,7 +162,7 @@
       <a href="https://spotify.com" target="_blank" rel="noopener">Spotify</a>
       <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
     </div>
-<a href ="aboutme.html">About Me</a>
+    <a href="releases.html" class="btn-releases">Singles / Releases</a>
   </main>
 
 </body>
