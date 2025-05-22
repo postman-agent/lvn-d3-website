@@ -80,19 +80,19 @@
       white-space: nowrap;
       overflow: hidden;
       border-right: 3px solid #00ffe1;
-      width: 0;
-      animation: typing 2s steps(20, end) forwards, blink 0.7s infinite;
+      padding-right: 5px;
       margin-bottom: 1rem;
+      min-height: 3.5rem; /* Höhe festlegen, damit es nicht springt */
     }
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 10ch }
-    }
-
+    /* Cursor blink */
     @keyframes blink {
       0%, 100% { border-color: transparent }
       50% { border-color: #00ffe1 }
+    }
+
+    .typing-container {
+      animation: blink 0.7s infinite;
     }
 
     .social-links {
@@ -167,7 +167,7 @@
   </nav>
 
   <main>
-    <div class="typing-container">LVN_D3</div>
+    <div class="typing-container" id="typing"></div>
 
     <div class="social-links">
       <a href="https://www.instagram.com/lvn_d3?igsh=MWdraTZ1aGc1Z2prYg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
@@ -177,6 +177,52 @@
     </div>
     <!-- <a href="releases.html" class="btn-releases">Singles / Releases</a> -->
   </main>
+
+  <script>
+    const words = ["LVN_D3", "Upcoming Rapper", "Producer"];
+    const typingSpeed = 120;   // ms pro Buchstabe tippen
+    const deletingSpeed = 70;  // ms pro Buchstabe löschen
+    const pauseTime = 1200;    // ms Pause nach Wort voll getippt
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.getElementById('typing');
+
+    function type() {
+      const currentWord = words[wordIndex];
+      
+      if (!isDeleting) {
+        // Tippen
+        typingElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentWord.length) {
+          // Wort fertig getippt, kurze Pause und dann löschen starten
+          isDeleting = true;
+          setTimeout(type, pauseTime);
+        } else {
+          setTimeout(type, typingSpeed);
+        }
+      } else {
+        // Löschen
+        typingElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          // Wort komplett gelöscht, nächstes Wort
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(type, typingSpeed);
+        } else {
+          setTimeout(type, deletingSpeed);
+        }
+      }
+    }
+
+    // Start Typing Effect
+    type();
+  </script>
 
 </body>
 </html>
