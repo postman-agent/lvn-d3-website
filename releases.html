@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LVN_D3 – Singles & Releases</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #000000);
+      color: #fff;
+      min-height: 100vh;
+      padding-top: 100px; /* Platz für Navbar */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* Navbar-Card */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid #00ffe1;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffe1;
+      padding: 10px 30px;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-weight: 600;
+      z-index: 100;
+      user-select: none;
+      backdrop-filter: blur(8px);
+    }
+
+    .navbar a {
+      color: #00ffe1;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #00ffe1;
+      color: #000;
+      box-shadow: 0 0 12px #00ffe1;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px #00ffe1;
+    }
+
+    .release-list {
+      max-width: 600px;
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .release-item {
+      background: #111;
+      border: 1px solid #00ffe1;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 15px #00ffe1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .release-item h2 {
+      color: #00ffe1;
+      margin-bottom: 8px;
+    }
+
+    .release-item p {
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+
+    .release-item a {
+      text-decoration: none;
+      background-color: #00ffe1;
+      color: #000;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 0 20px #00ffe1;
+      transition: background-color 0.3s ease;
+    }
+
+    .release-item a:hover {
+      background-color: #00c7b2;
+      box-shadow: 0 0 25px #00c7b2;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .release-item {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="releases.html">Singles / Releases</a>
+  </nav>
+
+  <main>
+    <h1>Singles & Releases</h1>
+    <div class="release-list">
+      <!-- Beispiel Single -->
+      <div class="release-item">
+        <h2>Luxury Vibes</h2>
+        <p>Release in ca. 2 Wochen</p>
+        <a href="https://open.spotify.com/track/DEIN_SPOTIFY_LINK" target="_blank" rel="noopener">Spotify anhören</a>
+      </div>
+
+      <!-- Hier kannst du weitere Singles hinzufügen -->
+    </div>
+  </main>
+
+</body>
+</html>
