@@ -2,9 +2,10 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LVN_D3 – Luxury Vibes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LVN_D3 – Offizielle Seite</title>
   <style>
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -12,83 +13,153 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(145deg, #000000, #0a0a0a);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #000000);
       color: #fff;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 100vh;
-      padding: 2rem;
+      padding-top: 100px; /* Platz für Navbar */
     }
 
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      color: #00ffe1;
-      text-shadow: 0 0 20px #00ffe1;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: #ccc;
-      margin-bottom: 2rem;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #aaa;
-      margin-bottom: 2rem;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .buttons a {
-      text-decoration: none;
-      background-color: #111;
+    /* Navbar-Card */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 20, 20, 0.85);
       border: 1px solid #00ffe1;
-      color: #00ffe1;
-      padding: 0.75rem 1.5rem;
-      border-radius: 999px;
-      transition: all 0.3s ease;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffe1;
+      padding: 10px 30px;
+      display: flex;
+      gap: 25px;
+      align-items: center;
       font-weight: 600;
+      z-index: 100;
+      user-select: none;
+      backdrop-filter: blur(8px);
     }
 
-    .buttons a:hover {
+    .navbar a {
+      color: #00ffe1;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #00ffe1;
+      color: #000;
+      box-shadow: 0 0 12px #00ffe1;
+    }
+
+    /* Haupt-Content */
+    main {
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+    }
+
+    main h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 20px #00ffe1;
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: #00ffe1;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 1px solid #00ffe1;
+      border-radius: 12px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-width: 90px;
+    }
+
+    .social-links a:hover {
       background-color: #00ffe1;
       color: #000;
       box-shadow: 0 0 15px #00ffe1;
     }
 
+    /* Button für Singles / Releases */
+    .btn-releases {
+      display: inline-block;
+      background-color: #00ffe1;
+      color: #000;
+      font-weight: 700;
+      padding: 14px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 0 20px #00ffe1;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-releases:hover {
+      background-color: #00c7b2;
+      box-shadow: 0 0 30px #00c7b2;
+    }
+
+    /* Responsive */
     @media (max-width: 600px) {
-      h1 {
+      main h1 {
         font-size: 2.2rem;
       }
-      h2 {
-        font-size: 1.2rem;
+      .navbar {
+        gap: 15px;
+        padding: 10px 20px;
+      }
+      .social-links a {
+        min-width: 75px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+      .btn-releases {
+        padding: 12px 30px;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Luxury Vibes</h1>
-  <h2>by LVN_D3</h2>
-  <p>🔥 Erste Single droppt in Kürze – bleib dran und folg mir hier:</p>
 
-  <div class="buttons">
-    <a href="https://instagram.com" target="_blank">Instagram</a>
-    <a href="https://tiktok.com" target="_blank">TikTok</a>
-    <a href="https://spotify.com" target="_blank">Spotify</a>
-    <a href="https://youtube.com" target="_blank">YouTube</a>
-  </div>
+  <nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#releases">Singles / Releases</a>
+  </nav>
+
+  <main>
+    <h1>LVN_D3</h1>
+    <div class="social-links">
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://spotify.com" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <a href="#releases" class="btn-releases">Singles / Releases</a>
+  </main>
+
+  <section id="releases" style="margin: 4rem auto; max-width: 600px; width: 90%; text-align: center; color: #aaa;">
+    <h2 style="color:#00ffe1; text-shadow: 0 0 15px #00ffe1; margin-bottom: 1rem;">Singles / Releases</h2>
+    <p>Hier werden bald deine Tracks, Videos und weitere Releases erscheinen.</p>
+    <p>Stay tuned! 🔥</p>
+  </section>
+
 </body>
 </html>
