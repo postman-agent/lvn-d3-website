@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LVN-D3 – In Entwicklung</title>
+  <title>LVN_D3 – Luxury Vibes</title>
   <style>
     * {
       margin: 0;
@@ -11,59 +11,84 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
+    body {
       font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at center, #0f0f0f, #050505);
-      color: #ffffff;
+      background: linear-gradient(145deg, #000000, #0a0a0a);
+      color: #fff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-    }
-
-    .container {
-      animation: fadeIn 1.2s ease-out both;
+      min-height: 100vh;
+      padding: 2rem;
     }
 
     h1 {
       font-size: 3rem;
       letter-spacing: 2px;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 15px #00ffe1;
+      color: #00ffe1;
+      text-shadow: 0 0 20px #00ffe1;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #ccc;
+      margin-bottom: 2rem;
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: 1rem;
       color: #aaa;
+      margin-bottom: 2rem;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      background-color: #111;
+      border: 1px solid #00ffe1;
+      color: #00ffe1;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .buttons a:hover {
+      background-color: #00ffe1;
+      color: #000;
+      box-shadow: 0 0 15px #00ffe1;
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
-
-      p {
-        font-size: 1rem;
+      h2 {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Website in Entwicklung</h1>
-    <p>LVN-D3 wird bald online gehen. Stay tuned.</p>
+  <h1>Luxury Vibes</h1>
+  <h2>by LVN_D3</h2>
+  <p>🔥 Erste Single droppt in Kürze – bleib dran und folg mir hier:</p>
+
+  <div class="buttons">
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+    <a href="https://tiktok.com" target="_blank">TikTok</a>
+    <a href="https://spotify.com" target="_blank">Spotify</a>
+    <a href="https://youtube.com" target="_blank">YouTube</a>
   </div>
 </body>
 </html>
