@@ -17,7 +17,7 @@
       background: linear-gradient(135deg, #0a0a0a, #000000);
       color: #fff;
       min-height: 100vh;
-      padding-top: 100px; /* Platz für Navbar */
+      padding-top: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -94,6 +94,19 @@
       align-items: center;
     }
 
+    .release-item img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 25px #00ffe1;
+      transition: transform 0.3s ease;
+    }
+
+    .release-item img:hover {
+      transform: scale(1.03);
+    }
+
     .release-item h2 {
       color: #00ffe1;
       margin-bottom: 8px;
@@ -145,14 +158,13 @@
   <main>
     <h1>Singles & Releases</h1>
     <div class="release-list">
-      <!-- Beispiel Single -->
+      <!-- Beispiel Single mit Cover -->
       <div class="release-item">
+        <img src="AlbumCover1.png" alt="Luxury Vibes Cover" />
         <h2>Luxury Vibes</h2>
         <p>Release in ca. 2 Wochen</p>
         <a href="https://open.spotify.com/track/" target="_blank" rel="noopener">Spotify</a>
       </div>
-
-      <!-- Weitere Releases können hier eingefügt werden -->
     </div>
   </main>
 
