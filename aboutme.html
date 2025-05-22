@@ -2,10 +2,10 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | LVN_D3</title>
-  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LVN_D3 – About Me</title>
   <style>
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -13,125 +13,108 @@
     }
 
     body {
-      font-family: 'Urbanist', sans-serif;
-      background-color: #0d0d0d;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #111;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #222;
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      color: #ff3c78;
-    }
-
-    nav a {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #000000);
       color: #fff;
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #ff3c78;
-    }
-
-    .about-me {
-      background: #0d0d0d;
-      padding: 4rem 1rem;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
-    }
-
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      gap: 2rem;
+      flex-direction: column;
       align-items: center;
+      padding-top: 100px; /* Platz für Navbar */
     }
 
-    .about-img {
-      width: 280px;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
+    /* Navbar-Card */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid #00ffe1;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffe1;
+      padding: 10px 30px;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-weight: 600;
+      z-index: 100;
+      user-select: none;
+      backdrop-filter: blur(8px);
     }
 
-    .about-text {
-      flex: 1;
-      min-width: 250px;
+    .navbar a {
+      color: #00ffe1;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .about-text h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: #ff3c78;
+    .navbar a:hover {
+      background-color: #00ffe1;
+      color: #000;
+      box-shadow: 0 0 12px #00ffe1;
     }
 
-    .about-text p {
-      font-size: 1.1rem;
-      line-height: 1.8;
+    /* Aktiver Link */
+    .navbar a.active {
+      background-color: #00ffe1;
+      color: #000;
+      box-shadow: 0 0 15px #00ffe1;
+      pointer-events: none;
+      cursor: default;
     }
 
-    footer {
+    /* Haupt-Content */
+    main {
+      max-width: 600px;
+      width: 90%;
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #666;
+      margin-top: 60px;
+      padding: 20px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      user-select: text;
     }
 
-    @media (max-width: 768px) {
-      .about-content {
-        flex-direction: column;
-        text-align: center;
-      }
+    main h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 20px #00ffe1;
+      margin-bottom: 1rem;
+    }
 
-      .about-img {
-        margin-bottom: 1rem;
+    main p {
+      margin-top: 1rem;
+      color: #ddd;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      main h1 {
+        font-size: 2.2rem;
+      }
+      .navbar {
+        gap: 15px;
+        padding: 10px 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>LVN_D3</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="releases.html">Releases</a>
-      <a href="aboutme.html">About Me</a>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="releases.html">Singles / Releases</a>
+    <a href="aboutme.html" class="active">About Me</a>
+  </nav>
 
-  <section class="about-me">
-    <div class="about-content">
-      <img src="/assets/lvn-profile.jpg" alt="LVN_D3" class="about-img" />
-      <div class="about-text">
-        <h2>Wer ist LVN?</h2>
-        <p>
-          LVN_D3 ist ein upcoming Artist aus [DEINE STADT], bekannt für seinen
-          futuristischen Sound und seine klaren Vibes. <br><br>
-          Mit seiner ersten Single <strong>„Luxury Vibes“</strong> bringt er den
-          perfekten Mix aus Style, Emotion und Attitude.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 LVN_D3. All rights reserved.
-  </footer>
+  <main>
+    <h1>Über LVN_D3</h1>
+    <p>Hey, ich bin LVN_D3 – ein aufstrebender Rapper mit Leidenschaft für authentische Beats und fette Vibes.</p>
+    <p>Mein erstes Single-Release <strong>"Luxury Vibes"</strong> kommt in ca. 2 Wochen. Bleib dran und folge mir auf Social Media für Updates!</p>
+    <p>Ich freue mich, dich auf meiner Reise dabei zu haben. Stay tuned!</p>
+  </main>
 
 </body>
 </html>
