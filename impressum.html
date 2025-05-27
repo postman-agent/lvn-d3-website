@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum – LVN_D3</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #000000);
+      color: #fff;
+      padding: 100px 20px 60px;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid #00ffe1;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffe1;
+      padding: 10px 30px;
+      display: flex;
+      gap: 25px;
+      font-weight: 600;
+      z-index: 100;
+      user-select: none;
+      backdrop-filter: blur(8px);
+    }
+
+    .navbar a {
+      color: #00ffe1;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #00ffe1;
+      color: #000;
+      box-shadow: 0 0 12px #00ffe1;
+    }
+
+    .navbar a.active {
+      background-color: #00ffe1;
+      color: #000;
+      box-shadow: 0 0 15px #00ffe1;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 15px #00ffe1;
+      color: #00ffe1;
+      margin-bottom: 30px;
+    }
+
+    p {
+      color: #ddd;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      margin-top: 60px;
+      color: #888;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #00ffe1;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .navbar {
+        gap: 15px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="releases.html">Singles / Releases</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="impressum.html" class="active">Impressum</a>
+  </nav>
+
+  <main>
+    <h1>Impressum</h1>
+
+    <p><strong>Angaben gemäß §5 TMG:</strong></p>
+    <p>
+      Name: <strong>Leon Singh</strong><br>
+      E-Mail: <a href="mailto:info@lvn-d3.com">info@lvn-d3.com</a><br>
+    </p>
+
+    <p>
+      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
+      <strong>LVN_D3</strong><br>
+      Kontakt über oben genannte E-Mail-Adresse.
+    </p>
+
+    <p><strong>Haftungsausschluss:</strong><br>
+    Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+
+    <p><strong>Künstlerprofil:</strong><br>
+    Dies ist eine rein künstlerische Website. Eine ladungsfähige Adresse wird auf Anfrage bereitgestellt.</p>
+
+  </main>
+
+  <footer>
+    <p>© 2025 LVN_D3 – All rights reserved · <a href="datenschutz.html">Datenschutz</a></p>
+  </footer>
+
+</body>
+</html>
