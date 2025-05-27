@@ -20,7 +20,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 100px; 
+      padding-top: 100px;
     }
 
     .navbar {
@@ -87,13 +87,28 @@
     }
 
     .quote-rotator {
-      font-size: 1.2rem;
-      font-style: italic;
+      margin-top: 50px;
+      font-size: 1.3rem;
+      font-weight: bold;
       color: #00ffe1;
       text-shadow: 0 0 10px #00ffe1;
-      margin-top: 40px;
+      height: 40px;
       min-height: 40px;
-      transition: opacity 0.4s ease;
+    }
+
+    .typing::after {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background-color: #00ffe1;
+      margin-left: 4px;
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     @media (max-width: 600px) {
@@ -121,32 +136,51 @@
     <p>Mein erstes Single-Release <strong>"Luxury Vibes"</strong> kommt in ca. 2 Wochen. Bleib dran und folge mir auf Social Media für Updates!</p>
     <p>Ich freue mich, dich auf meiner Reise dabei zu haben. Stay tuned!</p>
 
-    <!-- Zitat-Rotation -->
+    <!-- Typing Zitat-Rotation -->
     <div class="quote-rotator">
-      <span id="quote-text">"Ich schreib Bars, keine Ausreden."</span>
+      <span id="typing-quote" class="typing"></span>
     </div>
   </main>
 
   <script>
     const quotes = [
-      '"Ich schreib Bars, keine Ausreden."',
-      '"Bevor ich gefallen bin, hab ich geleuchtet."',
-      '"Alles independent – kein Label, kein Limit."',
-      '"Ich bin der Beat, du bist der Lärm."',
-      '"Studio statt Street – aber ich bleib real."'
+      "Ich schreib Bars, keine Ausreden.",
+      "Bevor ich gefallen bin, hab ich geleuchtet.",
+      "Alles independent – kein Label, kein Limit.",
+      "Ich bin der Beat, du bist der Lärm.",
+      "Studio statt Street – aber ich bleib real."
     ];
 
-    const quoteText = document.getElementById('quote-text');
-    let quoteIndex = 0;
+    let currentQuoteIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    const speed = 80;
+    const pause = 2000;
+    const el = document.getElementById("typing-quote");
 
-    setInterval(() => {
-      quoteText.style.opacity = 0;
-      setTimeout(() => {
-        quoteIndex = (quoteIndex + 1) % quotes.length;
-        quoteText.textContent = quotes[quoteIndex];
-        quoteText.style.opacity = 1;
-      }, 400);
-    }, 5000);
+    function typeQuote() {
+      const fullText = quotes[currentQuoteIndex];
+      if (isDeleting) {
+        currentCharIndex--;
+        el.textContent = fullText.substring(0, currentCharIndex);
+      } else {
+        currentCharIndex++;
+        el.textContent = fullText.substring(0, currentCharIndex);
+      }
+
+      if (!isDeleting && currentCharIndex === fullText.length) {
+        isDeleting = true;
+        setTimeout(typeQuote, pause);
+      } else if (isDeleting && currentCharIndex === 0) {
+        isDeleting = false;
+        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        setTimeout(typeQuote, 300);
+      } else {
+        setTimeout(typeQuote, isDeleting ? speed / 2 : speed);
+      }
+    }
+
+    typeQuote();
   </script>
 
 </body>
