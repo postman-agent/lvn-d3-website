@@ -111,6 +111,36 @@
       50% { opacity: 0; }
     }
 
+    .faq {
+      margin-top: 50px;
+      text-align: left;
+    }
+
+    details {
+      background: #111;
+      border: 1px solid #00ffe1;
+      border-radius: 10px;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px #00ffe155;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #00ffe1;
+      font-size: 1.1rem;
+    }
+
+    details[open] {
+      background: #1a1a1a;
+    }
+
+    details p {
+      margin-top: 10px;
+      color: #ddd;
+    }
+
     @media (max-width: 600px) {
       main h1 {
         font-size: 2.2rem;
@@ -136,12 +166,40 @@
     <p>Mein erstes Single-Release <strong>"Luxury Vibes"</strong> kommt in ca. 2 Wochen. Bleib dran und folge mir auf Social Media für Updates!</p>
     <p>Ich freue mich, dich auf meiner Reise dabei zu haben. Stay tuned!</p>
 
-    <h1>Test</h1>
-
     <!-- Typing Zitat-Rotation -->
     <div class="quote-rotator">
       <span id="typing-quote" class="typing"></span>
     </div>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <h2 style="margin-top: 40px; color: #00ffe1; text-align: center;">FAQ</h2>
+
+      <details>
+        <summary>Wie alt ist LVN?</summary>
+        <p>17 Jahre Alt</p>
+      </details>
+
+      <details>
+        <summary>Woher kommt LVN?</summary>
+        <p>Deutschland</p>
+      </details>
+
+      <details>
+        <summary>Seit wann macht LVN Musik?</summary>
+        <p>Vor knapp einem Jahr angefangen mit Lyriks Schreiben & Üben.</p>
+      </details>
+
+      <details>
+        <summary>Wer sind LVN's musikalischen Vorbilder?</summary>
+        <p>Koushino, Camaeleon, Max Well & Bushido</p>
+      </details>
+
+      <details>
+        <summary>Welche Softwaren nutzt LVN?</summary>
+        <p>FL Studio</p>
+      </details>
+    </section>
   </main>
 
   <script>
@@ -150,7 +208,6 @@
       "''Brabus Vor Der Tür, Hoodie sitzt tight ~ Luxury Vibes''",
       "''LVN Der Name Der Bleibt''",
       "''Ziehe deine Ziele durch, keine Ausreden!''",
-      
     ];
 
     let currentQuoteIndex = 0;
