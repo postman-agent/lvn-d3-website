@@ -23,7 +23,6 @@
       padding-top: 100px; 
     }
 
-    
     .navbar {
       position: fixed;
       top: 20px;
@@ -57,7 +56,6 @@
       box-shadow: 0 0 12px #00ffe1;
     }
 
-    
     .navbar a.active {
       background-color: #00ffe1;
       color: #000;
@@ -66,7 +64,6 @@
       cursor: default;
     }
 
-    
     main {
       max-width: 600px;
       width: 90%;
@@ -89,7 +86,16 @@
       color: #ddd;
     }
 
-    
+    .quote-rotator {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #00ffe1;
+      text-shadow: 0 0 10px #00ffe1;
+      margin-top: 40px;
+      min-height: 40px;
+      transition: opacity 0.4s ease;
+    }
+
     @media (max-width: 600px) {
       main h1 {
         font-size: 2.2rem;
@@ -111,10 +117,37 @@
 
   <main>
     <h1>Über Mich</h1>
-    <p>Ich bin LVN_D3 – ein upcoming  Rapper mit fette Vibes.</p>
+    <p>Ich bin LVN_D3 – ein upcoming Rapper mit fette Vibes.</p>
     <p>Mein erstes Single-Release <strong>"Luxury Vibes"</strong> kommt in ca. 2 Wochen. Bleib dran und folge mir auf Social Media für Updates!</p>
     <p>Ich freue mich, dich auf meiner Reise dabei zu haben. Stay tuned!</p>
+
+    <!-- Zitat-Rotation -->
+    <div class="quote-rotator">
+      <span id="quote-text">"Ich schreib Bars, keine Ausreden."</span>
+    </div>
   </main>
+
+  <script>
+    const quotes = [
+      '"Ich schreib Bars, keine Ausreden."',
+      '"Bevor ich gefallen bin, hab ich geleuchtet."',
+      '"Alles independent – kein Label, kein Limit."',
+      '"Ich bin der Beat, du bist der Lärm."',
+      '"Studio statt Street – aber ich bleib real."'
+    ];
+
+    const quoteText = document.getElementById('quote-text');
+    let quoteIndex = 0;
+
+    setInterval(() => {
+      quoteText.style.opacity = 0;
+      setTimeout(() => {
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+        quoteText.textContent = quotes[quoteIndex];
+        quoteText.style.opacity = 1;
+      }, 400);
+    }, 5000);
+  </script>
 
 </body>
 </html>
