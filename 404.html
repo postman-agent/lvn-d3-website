@@ -50,17 +50,38 @@
       box-shadow: 0 0 12px #00ffe1;
     }
 
-    h1 {
-      font-size: 3rem;
-      color: #00ffe1;
+    .error-icon {
+      font-size: 5rem;
+      color: #ff0055;
+      animation: pulse 1.5s infinite;
       margin-bottom: 20px;
-      text-shadow: 0 0 10px #00ffe1;
     }
 
-    p {
-      color: #ccc;
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+    }
+
+    .typing {
+      font-size: 2.2rem;
+      color: #00ffe1;
+      text-shadow: 0 0 10px #00ffe1;
+      height: 60px;
+    }
+
+    .typing::after {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background-color: #00ffe1;
+      margin-left: 5px;
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     a.button {
@@ -72,6 +93,7 @@
       text-decoration: none;
       box-shadow: 0 0 15px #00ffe1;
       transition: transform 0.2s ease;
+      margin-top: 30px;
     }
 
     a.button:hover {
@@ -87,11 +109,49 @@
     <a href="aboutme.html">About Me</a>
   </nav>
 
-  <main>
-    <h1>🚫 Seite nicht gefunden</h1>
-    <p>Die Seite, die du suchst, existiert nicht.</p>
-    <a href="index.html" class="button">Zurück zur Startseite</a>
-  </main>
+  <div class="error-icon">❌</div>
+
+  <div class="typing" id="typing-text"></div>
+
+  <a href="index.html" class="button">Zurück zur Startseite</a>
+
+  <script>
+    const texts = [
+      "Seite nicht gefunden",
+      "Page not found"
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const speed = 80;
+    const pause = 2000;
+    const el = document.getElementById("typing-text");
+
+    function typeText() {
+      const fullText = texts[index];
+      if (isDeleting) {
+        charIndex--;
+        el.textContent = fullText.substring(0, charIndex);
+      } else {
+        charIndex++;
+        el.textContent = fullText.substring(0, charIndex);
+      }
+
+      if (!isDeleting && charIndex === fullText.length) {
+        isDeleting = true;
+        setTimeout(typeText, pause);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        index = (index + 1) % texts.length;
+        setTimeout(typeText, 500);
+      } else {
+        setTimeout(typeText, isDeleting ? speed / 2 : speed);
+      }
+    }
+
+    typeText();
+  </script>
 
 </body>
 </html>
